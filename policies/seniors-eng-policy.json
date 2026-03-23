@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2FullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "S3FullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyIAMAccess",
+            "Effect": "Deny",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyAllIAMAccess",
+            "Effect": "Deny",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

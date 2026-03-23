@@ -1,0 +1,55 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "S3BucketReadWriteAccess",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:GetObjectAcl",
+                "s3:PutObjectAcl",
+                "s3:GetObjectVersion",
+                "s3:DeleteObjectVersion",
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": [
+                "arn:aws:s3:::company-qa-bucket",
+                "arn:aws:s3:::company-qa-bucket/*"
+            ]
+        },
+        {
+            "Sid": "EC2ViewOnlyAccess",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ec2:Get*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyCloudWatchAccess",
+            "Effect": "Deny",
+            "Action": "cloudwatch:*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyIAMAccess",
+            "Effect": "Deny",
+            "Action": "iam:*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyS3BucketDeletion",
+            "Effect": "Deny",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:DeleteBucketPolicy",
+                "s3:DeleteBucketWebsite"
+            ],
+            "Resource": "arn:aws:s3:::company-qa-bucket"
+        }
+    ]
+}

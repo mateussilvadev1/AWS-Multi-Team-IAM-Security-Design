@@ -1,0 +1,29 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2ReadOnly",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyAllIAMAccess",
+            "Effect": "Deny",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "CloudWatchReadOnly",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:Describe*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
