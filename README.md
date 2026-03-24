@@ -82,25 +82,6 @@ require controlled and secure access to AWS services.
 
 ------------------------------------------------------------------------
 
-## Project Structure
-
-    /policies
-      ├── junior-dev-policy.json
-      ├── senior-eng-policy.json
-      ├── support-team-policy.json
-      └── qa-team-policy.json
-
-------------------------------------------------------------------------
-
-## How to Use
-
-1.  Create IAM groups for each team\
-2.  Attach corresponding policies\
-3.  Create users and assign them to groups\
-4.  Validate permissions using AWS Console or CLI
-
-------------------------------------------------------------------------
-
 ## Key Learnings
 
 -   Designing scalable IAM structures\
